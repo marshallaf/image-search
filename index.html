@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>URL Shortener</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="root">
+    <div class="title">Image Search API</div>
+    <div class="abstract">
+      <p>A microservice to return a JSON array of search results from Imgur.</p>
+      <p>
+        To use, direct your browser to <span class="inline-code">https://imagesearch-marshallaf.herokuapp.com/</span>, followed by the search term. The response will be a JSON array of Imgur links and their description.
+      </p>
+      <p>Visiting <span class="inline-code"><a href='https://imagesearch-marshallaf.herokuapp.com/recent'>https://imagesearch-marshallaf.herokuapp.com/recent</a></span> will show the 10 most recent searches.</p>
+    </div>
+    <div class="example-container">
+      <div class="title">example usage</div>
+      <div class="example-codebox">
+        <span class="comment">// search for image</span><br />
+        <span class="url">https://imagesearch-marshallaf.herokuapp.com/eggs%20benedict</span><br /><br />
+        <span class="comment">// response</span><br />
+        [{
+          <div class="code-indent">
+            <span class="bold">url: </span>
+            <span class="url">
+              <a href="http://imgur.com/a/Cd1xy">http://imgur.com/a/Cd1xy</a></span><span class="bold">,</span><br />
+            <span class="bold">text: </span>
+            <span class="string">
+              "Eggs Benedict with crushed avocados"
+            </span>
+          </div>
+        }, ...
+      </div>
+    </div>
+    <div class="attribution">
+    Created by Andrew Marshall with <a href="https://nodejs.org/">Node.js</a> and <a href="http://expressjs.com/">Express.js</a>. <a href="https://www.github.com/marshallaf/image-search">See it on Github!</a></div>
+  </div>
+</body>
+</html>

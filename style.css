@@ -1,0 +1,67 @@
+.code-indent {
+  margin-left: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.example-codebox {
+  font-family: monospace;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+.inline-code {
+  font-family: monospace;
+  background-color: #f9f9f9;
+  color: #dc2c00;
+}
+
+.number {
+  color: #ad5bff;
+}
+
+.string {
+  color: #15ef41;
+}
+
+.comment {
+  color: #7f7f7f;
+}
+
+.url a {
+  color: #f727d1;
+}
+
+.root {
+  margin: 0 auto 0 auto;
+  max-width: 700px;
+}
+
+.root .title {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.example-container .title {
+  font-weight: bold;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+body {
+  margin-top: 25px;
+  font-family: sans-serif;
+}
+
+.attribution {
+  margin-top: 20px;
+}

@@ -11,6 +11,12 @@ const CLIENT_ID = process.env.CLIENT_ID;
 
 app.set('port', (process.env.PORT || 8080));
 
+app.use(express.static(__dirname));
+
+app.get('/favicon.ico', (req, res) => {
+    res.send(204);
+});
+
 app.get('/recent', (req, res) => {
   MongoClient.connect(MongoUrl, (err, db) => {
     if (err) {
