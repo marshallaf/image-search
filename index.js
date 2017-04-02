@@ -5,9 +5,9 @@ const mongodb = require('mongodb');
 const app = express();
 
 const MongoClient = mongodb.MongoClient;
-const MongoUrl = 'mongodb://localhost:27017/imagesearch';
+const MongoUrl = process.env.MLAB_URI;
 
-const CLIENT_KEYS = require('./secret.js');
+const CLIENT_ID = process.env.CLIENT_ID;
 
 app.set('port', (process.env.PORT || 8080));
 
@@ -47,7 +47,7 @@ app.get('/*', (req, res) => {
   let options = {
     url: 'https://api.imgur.com/3/gallery/search/time/' + offset + '?q=' + term,
     headers: {
-      'Authorization': 'Client-ID ' + CLIENT_KEYS.CLIENT_ID, 
+      'Authorization': 'Client-ID ' + CLIENT_ID, 
     }
   }
   request(options, function (error, response, body) {
