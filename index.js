@@ -83,22 +83,23 @@ function addSearch(term) {
     collection.insert(searchObj, (err, insertRes) => {
       if (err) {
         console.log(err);
+        db.close();
       } else {
         collection.stats((err, stats) => {
           if (err) {
             console.log(err);
-            return;
+            db.close();
           }
           if (stats.count > 10) {
-            collection.findAndModify({
-              query: {},
-              sort: {timestamp: 1},
-              remove: true,
+            collection.findAndModify({}, [['timestamp', 1]], {}, {remove: true}, (err, doc) => {
+              if (err) {
+                console.log('problem removing oldest search');
+              }
+              db.close();
             });
           }
         });
       }
-      db.close();
     });
   });
 }
